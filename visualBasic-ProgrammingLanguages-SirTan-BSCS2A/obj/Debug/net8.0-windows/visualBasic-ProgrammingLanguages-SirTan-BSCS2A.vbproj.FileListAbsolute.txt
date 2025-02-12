@@ -14,3 +14,21 @@ C:\Users\User\source\projects\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\vis
 C:\Users\User\source\projects\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.genruntimeconfig.cache
 C:\Users\User\source\projects\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\ref\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.dll
 C:\Users\User\source\projects\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic_ProgrammingLanguages_SirTan_BSCS2A.MainCalc.resources
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.exe
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.deps.json
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.runtimeconfig.json
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.dll
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.pdb
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic_ProgrammingLanguages_SirTan_BSCS2A.MainCalc.resources
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic_ProgrammingLanguages_SirTan_BSCS2A.Resources.resources
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj.GenerateResource.cache
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.AssemblyInfoInputs.cache
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.AssemblyInfo.vb
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj.CoreCompileInputs.cache
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.sourcelink.json
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.dll
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\refint\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.dll
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.pdb
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.genruntimeconfig.cache
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\ref\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.dll

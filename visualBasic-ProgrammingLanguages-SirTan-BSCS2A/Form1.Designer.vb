@@ -23,16 +23,26 @@ Partial Class MainCalc
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        TextBox1 = New TextBox()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(151), CByte(171), CByte(70))
+        Panel1.Controls.Add(TextBox1)
         Panel1.ForeColor = SystemColors.ControlText
         Panel1.Location = New Point(73, 70)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(299, 82)
         Panel1.TabIndex = 0
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(93, 18)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(100, 23)
+        TextBox1.TabIndex = 0
         ' 
         ' MainCalc
         ' 
@@ -44,9 +54,12 @@ Partial Class MainCalc
         Name = "MainCalc"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Calculator"
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents TextBox1 As TextBox
 
 End Class

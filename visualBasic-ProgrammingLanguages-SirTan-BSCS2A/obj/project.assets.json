@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\projects\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj",
+      "projectUniqueName": "C:\\Github Repos\\VBNET_Calc\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj",
       "projectName": "visualBasic-ProgrammingLanguages-SirTan-BSCS2A",
-      "projectPath": "C:\\Users\\User\\source\\projects\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj",
+      "projectPath": "C:\\Github Repos\\VBNET_Calc\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\projects\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\obj\\",
+      "outputPath": "C:\\Github Repos\\VBNET_Calc\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
