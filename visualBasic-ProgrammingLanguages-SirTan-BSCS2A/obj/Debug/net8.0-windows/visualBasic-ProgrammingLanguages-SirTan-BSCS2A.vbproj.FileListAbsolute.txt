@@ -32,3 +32,8 @@ C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\De
 C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.pdb
 C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.genruntimeconfig.cache
 C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\ref\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.dll
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\Guna.UI2.dll
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\System.Management.dll
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj.AssemblyReference.cache
+C:\Github Repos\VBNET_Calc\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\obj\Debug\net8.0-windows\visualBa.CF03359F.Up2Date

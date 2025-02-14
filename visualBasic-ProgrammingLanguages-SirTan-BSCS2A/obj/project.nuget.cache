@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "P2hm3yv2Mu4=",
+  "dgSpecHash": "18oaIuu6LB8=",
   "success": true,
   "projectFilePath": "C:\\Github Repos\\VBNET_Calc\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A\\visualBasic-ProgrammingLanguages-SirTan-BSCS2A.vbproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.6\\guna.ui2.winforms.2.0.4.6.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.management\\7.0.0\\system.management.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
