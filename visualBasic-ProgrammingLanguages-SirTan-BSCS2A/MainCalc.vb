@@ -40,48 +40,14 @@ Public Class MainCalc
 
 #Region "BUTTON DESIGNS"
 
-    'BUTTON 0
-    Private Sub Button0_Paint(sender As Object, e As PaintEventArgs) Handles Button0.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-       SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-       SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-       SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-       SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton0 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
-    End Sub
-
-    Private Sub Button0_MouseDown(sender As Object, e As MouseEventArgs) Handles Button0.MouseDown
-        boolButton0 = True
-    End Sub
-
-    Private Sub Button0_MouseUp(sender As Object, e As MouseEventArgs) Handles Button0.MouseUp
-        boolButton0 = False
-    End Sub
-
-
-    'BUTTON 1
-    Private Sub Button1_Paint(sender As Object, e As PaintEventArgs) Handles Button1.Paint
+    Private Sub btnDesign(ByVal value As Boolean, e As PaintEventArgs)
         ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
         SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
         SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
         SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
         SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
 
-        If boolButton1 = False Then
+        If value = False Then
             ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
             SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
             SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
@@ -97,6 +63,21 @@ Public Class MainCalc
         End If
     End Sub
 
+    'BUTTON 0
+    Private Sub Button0_Paint(sender As Object, e As PaintEventArgs) Handles Button0.Paint
+        btnDesign(boolButton0, e)
+    End Sub
+    Private Sub Button0_MouseDown(sender As Object, e As MouseEventArgs) Handles Button0.MouseDown
+        boolButton0 = True
+    End Sub
+    Private Sub Button0_MouseUp(sender As Object, e As MouseEventArgs) Handles Button0.MouseUp
+        boolButton0 = False
+    End Sub
+
+    'BUTTON 1
+    Private Sub Button1_Paint(sender As Object, e As PaintEventArgs) Handles Button1.Paint
+        btnDesign(boolButton1, e)
+    End Sub
     Private Sub Button1_MouseDown(sender As Object, e As MouseEventArgs) Handles Button1.MouseDown
         boolButton1 = True
     End Sub
@@ -104,461 +85,156 @@ Public Class MainCalc
         boolButton1 = False
     End Sub
 
-
     'BUTTON 2
     Private Sub Button2_Paint(sender As Object, e As PaintEventArgs) Handles Button2.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton2 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton2, e)
     End Sub
-
     Private Sub Button2_MouseDown(sender As Object, e As MouseEventArgs) Handles Button2.MouseDown
         boolButton2 = True
     End Sub
-
     Private Sub Button2_MouseUp(sender As Object, e As MouseEventArgs) Handles Button2.MouseUp
         boolButton2 = False
     End Sub
 
-
     'BUTTON 3
     Private Sub Button3_Paint(sender As Object, e As PaintEventArgs) Handles Button3.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton3 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton3, e)
     End Sub
-
     Private Sub Button3_MouseDown(sender As Object, e As MouseEventArgs) Handles Button3.MouseDown
         boolButton3 = True
     End Sub
-
     Private Sub Button3_MouseUp(sender As Object, e As MouseEventArgs) Handles Button3.MouseUp
         boolButton3 = False
     End Sub
 
-
     'BUTTON 4
     Private Sub Button4_Paint(sender As Object, e As PaintEventArgs) Handles Button4.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton4 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton4, e)
     End Sub
-
     Private Sub Button4_MouseDown(sender As Object, e As MouseEventArgs) Handles Button4.MouseDown
         boolButton4 = True
     End Sub
-
     Private Sub Button4_MouseUp(sender As Object, e As MouseEventArgs) Handles Button4.MouseUp
         boolButton4 = False
     End Sub
 
-
     'BUTTON 5
     Private Sub Button5_Paint(sender As Object, e As PaintEventArgs) Handles Button5.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton5 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton5, e)
     End Sub
-
     Private Sub Button5_MouseDown(sender As Object, e As MouseEventArgs) Handles Button5.MouseDown
         boolButton5 = True
     End Sub
-
     Private Sub Button5_MouseUp(sender As Object, e As MouseEventArgs) Handles Button5.MouseUp
         boolButton5 = False
     End Sub
 
     'BUTTON 6
     Private Sub Button6_Paint(sender As Object, e As PaintEventArgs) Handles Button6.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton6 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton6, e)
     End Sub
-
     Private Sub Button6_MouseDown(sender As Object, e As MouseEventArgs) Handles Button6.MouseDown
         boolButton6 = True
     End Sub
-
     Private Sub Button6_MouseUp(sender As Object, e As MouseEventArgs) Handles Button6.MouseUp
         boolButton6 = False
     End Sub
 
     'BUTTON 7
     Private Sub Button7_Paint(sender As Object, e As PaintEventArgs) Handles Button7.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton7 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton7, e)
     End Sub
-
     Private Sub Button7_MouseDown(sender As Object, e As MouseEventArgs) Handles Button7.MouseDown
         boolButton7 = True
     End Sub
-
     Private Sub Button7_MouseUp(sender As Object, e As MouseEventArgs) Handles Button7.MouseUp
         boolButton7 = False
     End Sub
 
-
     'BUTTON 8
     Private Sub Button8_Paint(sender As Object, e As PaintEventArgs) Handles Button8.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton8 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton8, e)
     End Sub
-
     Private Sub Button8_MouseDown(sender As Object, e As MouseEventArgs) Handles Button8.MouseDown
         boolButton8 = True
     End Sub
-
     Private Sub Button8_MouseUp(sender As Object, e As MouseEventArgs) Handles Button8.MouseUp
         boolButton8 = False
     End Sub
 
-
     'BUTTON 9
     Private Sub Button9_Paint(sender As Object, e As PaintEventArgs) Handles Button9.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButton9 = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButton9, e)
     End Sub
-
     Private Sub Button9_MouseDown(sender As Object, e As MouseEventArgs) Handles Button9.MouseDown
         boolButton9 = True
     End Sub
-
     Private Sub Button9_MouseUp(sender As Object, e As MouseEventArgs) Handles Button9.MouseUp
         boolButton9 = False
     End Sub
 
-
     'ADDITION BUTTON
     Private Sub addBtn_Paint(sender As Object, e As PaintEventArgs) Handles addBtn.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButtonAdd = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButtonAdd, e)
     End Sub
-
     Private Sub addBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles addBtn.MouseDown
         boolButtonAdd = True
     End Sub
-
     Private Sub addBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles addBtn.MouseUp
         boolButtonAdd = False
     End Sub
 
-
     'SUBTRACTION BUTTON
     Private Sub subtractBtn_Paint(sender As Object, e As PaintEventArgs) Handles subtractBtn.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButtonSub = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButtonSub, e)
     End Sub
-
     Private Sub subtractBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles subtractBtn.MouseDown
         boolButtonSub = True
     End Sub
-
     Private Sub subtractBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles subtractBtn.MouseUp
         boolButtonSub = False
     End Sub
 
-
     'MULTIPLICATION BUTTON
     Private Sub multiplyBtn_Paint(sender As Object, e As PaintEventArgs) Handles multiplyBtn.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButtonMul = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButtonMul, e)
     End Sub
-
     Private Sub multiplyBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles multiplyBtn.MouseDown
         boolButtonMul = True
     End Sub
-
     Private Sub multiplyBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles multiplyBtn.MouseUp
         boolButtonMul = False
     End Sub
 
-
     'DIVISION BUTTON
     Private Sub divideBtn_Paint(sender As Object, e As PaintEventArgs) Handles divideBtn.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButtonDiv = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButtonDiv, e)
     End Sub
-
     Private Sub divideBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles divideBtn.MouseDown
         boolButtonDiv = True
     End Sub
-
     Private Sub divideBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles divideBtn.MouseUp
         boolButtonDiv = False
     End Sub
 
-
     'DOT BUTTON
     Private Sub dotBtn_Paint(sender As Object, e As PaintEventArgs) Handles dotBtn.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButtonDot = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButtonDot, e)
     End Sub
-
     Private Sub dotBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles dotBtn.MouseDown
         boolButtonDot = True
     End Sub
-
     Private Sub dotBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles dotBtn.MouseUp
         boolButtonDot = False
     End Sub
 
-
     'CLEAR BUTTON
     Private Sub clearBtn_Paint(sender As Object, e As PaintEventArgs) Handles clearBtn.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButtonClear = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButtonClear, e)
     End Sub
     Private Sub clearBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles clearBtn.MouseDown
         boolButtonClear = True
     End Sub
-
     Private Sub clearBtn_MouseUp(sender As Object, e As MouseEventArgs) Handles clearBtn.MouseUp
         boolButtonClear = False
     End Sub
@@ -566,42 +242,19 @@ Public Class MainCalc
 
     'EQUAL BUTTON
     Private Sub equalButton_Paint(sender As Object, e As PaintEventArgs) Handles equalButton.Paint
-        ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        If boolButtonEqual = False Then
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
-
-        Else
-            ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
-        End If
+        btnDesign(boolButtonEqual, e)
     End Sub
-
     Private Sub equalButton_MouseDown(sender As Object, e As MouseEventArgs) Handles equalButton.MouseDown
         boolButtonEqual = True
     End Sub
-
     Private Sub equalButton_MouseUp(sender As Object, e As MouseEventArgs) Handles equalButton.MouseUp
         boolButtonEqual = False
     End Sub
-
 #End Region
 
     Private Sub MainCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox2.SelectionStart = TextBox2.Text.Length
     End Sub
-
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
         Dim g As Graphics = Panel1.CreateGraphics()
