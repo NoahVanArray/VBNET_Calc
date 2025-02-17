@@ -22,8 +22,8 @@ Partial Class MainCalc
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Panel1 = New Panel()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         MainLabel = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -49,6 +49,7 @@ Partial Class MainCalc
         debuga = New Button()
         debugb = New Button()
         isEqualedBtn = New Button()
+        happ = New Button()
         Panel1.SuspendLayout()
         Guna2Panel1.SuspendLayout()
         SuspendLayout()
@@ -71,11 +72,11 @@ Partial Class MainCalc
         Guna2Panel1.BorderColor = Color.Silver
         Guna2Panel1.BorderThickness = 2
         Guna2Panel1.Controls.Add(MainLabel)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges1
+        Guna2Panel1.CustomizableEdges = CustomizableEdges3
         Guna2Panel1.ForeColor = Color.FromArgb(CByte(143), CByte(159), CByte(72))
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Panel1.Size = New Size(555, 79)
         Guna2Panel1.TabIndex = 21
         Guna2Panel1.UseTransparentBackground = True
@@ -446,12 +447,29 @@ Partial Class MainCalc
         isEqualedBtn.Text = "is equal?"
         isEqualedBtn.UseVisualStyleBackColor = True
         ' 
+        ' happ
+        ' 
+        happ.Anchor = AnchorStyles.None
+        happ.Cursor = Cursors.Hand
+        happ.FlatAppearance.BorderSize = 0
+        happ.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight
+        happ.FlatStyle = FlatStyle.Flat
+        happ.Font = New Font("Trebuchet MS", 13F, FontStyle.Bold)
+        happ.ForeColor = Color.FromArgb(CByte(217), CByte(218), CByte(220))
+        happ.Location = New Point(219, 408)
+        happ.Name = "happ"
+        happ.Size = New Size(137, 33)
+        happ.TabIndex = 24
+        happ.Text = "happening #"
+        happ.UseVisualStyleBackColor = True
+        ' 
         ' MainCalc
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(37), CByte(38), CByte(38))
         ClientSize = New Size(599, 450)
+        Controls.Add(happ)
         Controls.Add(isEqualedBtn)
         Controls.Add(debugb)
         Controls.Add(debuga)
@@ -509,5 +527,6 @@ Partial Class MainCalc
     Friend WithEvents debuga As Button
     Friend WithEvents debugb As Button
     Friend WithEvents isEqualedBtn As Button
+    Friend WithEvents happ As Button
 
 End Class

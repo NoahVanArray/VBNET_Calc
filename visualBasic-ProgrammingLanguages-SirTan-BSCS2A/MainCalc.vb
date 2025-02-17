@@ -1,8 +1,8 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-
 Public Class MainCalc
 
+#Region "BOOL BUTTON PRESSED STATE"
     Private boolButton0 As Boolean = False
     Private boolButton1 As Boolean = False
     Private boolButton2 As Boolean = False
@@ -21,6 +21,7 @@ Public Class MainCalc
     Private boolButtonClear As Boolean = False
     Private boolButtonEqual As Boolean = False
     Private btnActive As Boolean = True
+#End Region
 
     Private isAdd As Boolean = False
     Private isSub As Boolean = False
@@ -28,6 +29,13 @@ Public Class MainCalc
     Private isDiv As Boolean = False
 
     Private isEqualed As Boolean = False
+    Private clearText As Boolean = True
+    Private doAdd As Boolean = False
+
+    Private sum As Decimal = 0
+    Private b As Decimal = 0
+
+    Private afe As Decimal = 0
 
 #Region "BUTTON DESIGNS"
 
@@ -558,24 +566,24 @@ Public Class MainCalc
     'EQUAL BUTTON
     Private Sub equalButton_Paint(sender As Object, e As PaintEventArgs) Handles equalButton.Paint
         ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-        SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset,
-        SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset)
+        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
+        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
+        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
+        SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
 
         If boolButtonEqual = False Then
             ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Outset)
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Outset)
 
         Else
             ControlPaint.DrawBorder(e.Graphics, Button1.ClientRectangle,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Inset,
-            SystemColors.ControlLightLight, 7, ButtonBorderStyle.Inset)
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset,
+            SystemColors.ControlLightLight, 3.5, ButtonBorderStyle.Inset)
         End If
     End Sub
 
@@ -589,12 +597,7 @@ Public Class MainCalc
 
 #End Region
 
-
     Private Sub MainCalc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'txtWindow.TopLevel = False
-        'txtWindow.Visible = True
-        'txtWindow.WindowState = FormWindowState.Maximized
-        'Panel1.Controls.Add(txtWindow)
         TextBox2.SelectionStart = TextBox2.Text.Length
     End Sub
 
@@ -618,65 +621,30 @@ Public Class MainCalc
         g.DrawLine(pen2, p3, p4)
     End Sub
 
-    Private a As Decimal = 0
-    Private b As Decimal = 0
-    'Private sum As Decimal         lol why did i not use this
-
 
     Function typeBtn(value) As String
         If MainLabel.Text.Length < 12 And btnActive = True Then
-            If isEqualed Then
+
+            If clearText = True Then
                 MainLabel.Text = ""
+                clearText = False
+                happ.Text = "Happening #1"
             End If
-            If MainLabel.Text.Equals("0") Then
 
-                If count = 0 Then
-                    MainLabel.Text = ""
-                    MainLabel.Text &= value
-                    a = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-
-                    debug.Text = count.ToString()
-                    debuga.Text = a.ToString()
-                    debugb.Text = b.ToString()
-
-                End If
-
-                If count = 1 Then
-                    MainLabel.Text = ""
-                    MainLabel.Text &= value
-                    b = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-                    'count = 1
-
-                    debug.Text = count.ToString()
-                    debuga.Text = a.ToString()
-                    debugb.Text = b.ToString()
-
-                End If
-
-            ElseIf Not MainLabel.Text.Equals("0") Then
-                If count = 0 Then
-                    MainLabel.Text &= value
-                    a = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-
-                    debug.Text = count.ToString()
-                    debuga.Text = a.ToString()
-                    debugb.Text = b.ToString()
-
-                End If
-
-                If count = 1 Then
-                    '    MainLabel.Text = ""
-                    MainLabel.Text &= value
-                    b = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-                    'count = 1
-
-                    debug.Text = count.ToString()
-                    debuga.Text = a.ToString()
-                    debugb.Text = b.ToString()
-
-                End If
-
+            If isEqualed Then
+                b = 0
+                afe = 0
+                happ.Text = "Happening #2"
             End If
+
+            MainLabel.Text += value
+            b = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            afe = b
+
+            debuga.Text = sum.ToString()
+            debugb.Text = b.ToString()
+
+            doAdd = True
 
         End If
     End Function
@@ -684,6 +652,10 @@ Public Class MainCalc
 #Region "INPUT BUTTONS"
     Private Sub Button0_Click(sender As Object, e As EventArgs) Handles Button0.Click
         typeBtn("0")
+
+        If Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture) = 0 Then
+            MainLabel.Text = "0"
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -724,13 +696,15 @@ Public Class MainCalc
 
     Private Sub clearBtn_Click(sender As Object, e As EventArgs) Handles clearBtn.Click
         MainLabel.Text = "0"
-        a = 0
+        sum = 0
         b = 0
         count = 0
         dotCount = 0
 
+        isEqualed = False
+        clearText = True
         debug.Text = count.ToString()
-        debuga.Text = a.ToString()
+        debuga.Text = sum.ToString()
         debugb.Text = b.ToString()
 
     End Sub
@@ -738,7 +712,7 @@ Public Class MainCalc
     Private Sub dotBtn_Click(sender As Object, e As EventArgs) Handles dotBtn.Click
         If MainLabel.Text.Length < 12 And Not String.IsNullOrEmpty(MainLabel.Text) And btnActive = True And dotCount = 0 Then
             MainLabel.Text &= "."
-            dotCount += 1
+            dotCount = 1
         End If
     End Sub
 
@@ -748,90 +722,207 @@ Public Class MainCalc
     Private count As Int128 = 0
     Private dotCount As Int128 = 0
     Private Sub addBtn_Click(sender As Object, e As EventArgs) Handles addBtn.Click
-        If count = 0 And isEqualed = True Then
-            a = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-            count = 1
-
-            debug.Text = count.ToString()
-            debuga.Text = a.ToString()
-            debugb.Text = b.ToString()
-            isEqualed = False
-            isEqualedBtn.Text = isEqualed.ToString()
-
-        ElseIf count = 1 Or isEqualed = False Then
-            b = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-            count = 2
-
-        ElseIf count = 2 Then
-            MainLabel.Text = (a + b).ToString()
-            a = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+        If count = 0 Then
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            happ.Text = "Happening #4.1.1"
         End If
 
+        If count = 1 Then
+            If doAdd Then
+                MainLabel.Text = sum + b
+                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+
+                doAdd = False
+                happ.Text = "Happening #4.1.2"
+            End If
+        End If
+
+        b = 0
+
+        isEqualedBtn.Text = isEqualed.ToString()
         debug.Text = count.ToString()
-        debuga.Text = a.ToString()
+        debuga.Text = sum.ToString()
         debugb.Text = b.ToString()
+
+        clearText = True
 
         isAdd = True
         isSub = False
         isMul = False
         isDiv = False
+
+        dotCount = 0
+        count = 1
     End Sub
 
     Private Sub subtractBtn_Click(sender As Object, e As EventArgs) Handles subtractBtn.Click
+        If count = 0 Then
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            happ.Text = "Happening #4.2.1"
+        End If
 
+        If count = 1 Then
+            If doAdd Then
+                MainLabel.Text = sum - b
+                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+
+                doAdd = False
+                happ.Text = "Happening #4.2.2"
+            End If
+        End If
+
+        b = 0
+
+        isEqualedBtn.Text = isEqualed.ToString()
+        debug.Text = count.ToString()
+        debuga.Text = sum.ToString()
+        debugb.Text = b.ToString()
+
+        clearText = True
+
+        isAdd = False
+        isSub = True
+        isMul = False
+        isDiv = False
+
+        dotCount = 0
+        count = 1
     End Sub
 
     Private Sub multiplyBtn_Click(sender As Object, e As EventArgs) Handles multiplyBtn.Click
+        If count = 0 Then
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            happ.Text = "Happening #4.3.1"
+        End If
 
+        If count = 1 Then
+            If doAdd Then
+                MainLabel.Text = sum * b
+                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+
+                doAdd = False
+                happ.Text = "Happening #4.3.2"
+            End If
+        End If
+
+        b = 0
+
+        isEqualedBtn.Text = isEqualed.ToString()
+        debug.Text = count.ToString()
+        debuga.Text = sum.ToString()
+        debugb.Text = b.ToString()
+
+        clearText = True
+
+        isAdd = False
+        isSub = False
+        isMul = True
+        isDiv = False
+
+        dotCount = 0
+        count = 1
     End Sub
 
     Private Sub divideBtn_Click(sender As Object, e As EventArgs) Handles divideBtn.Click
+        If count = 0 Then
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            happ.Text = "Happening #4.4.1"
+        End If
 
+        If count = 1 Then
+            If doAdd Then
+                MainLabel.Text = sum / b
+                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+
+                doAdd = False
+                happ.Text = "Happening #4.4.2"
+            End If
+        End If
+
+        b = 0
+
+        isEqualedBtn.Text = isEqualed.ToString()
+        debug.Text = count.ToString()
+        debuga.Text = sum.ToString()
+        debugb.Text = b.ToString()
+
+        clearText = True
+
+        isAdd = False
+        isSub = False
+        isMul = False
+        isDiv = True
+
+        dotCount = 0
+        count = 1
     End Sub
 
     Private Sub equalButton_Click(sender As Object, e As EventArgs) Handles equalButton.Click
-        'check what operator is used (use true or false state on the operators) then solve the given equation.  
         If isAdd = True Then
-            MainLabel.Text = (a + b).ToString()
-            a = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            MainLabel.Text = (sum + afe).ToString()
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
             b = 0
-            count = 0
 
             isEqualed = True
-            isEqualedBtn.Text = isEqualed.ToString()
 
             debug.Text = count.ToString()
-            debuga.Text = a.ToString()
+            debuga.Text = sum.ToString()
             debugb.Text = b.ToString()
-            'asd
+            isEqualedBtn.Text = isEqualed.ToString()
+            happ.Text = "Happening #5.1"
         End If
         If isSub = True Then
-            MainLabel.Text = CStr(CDec(MainLabel.Text) - b)
-            a = CDec(MainLabel.Text)
-            count = 0
+            MainLabel.Text = (sum - afe).ToString()
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            b = 0
+
+            isEqualed = True
+
+            debug.Text = count.ToString()
+            debuga.Text = sum.ToString()
+            debugb.Text = b.ToString()
+            isEqualedBtn.Text = isEqualed.ToString()
+            happ.Text = "Happening #5.2"
         End If
         If isMul = True Then
-            MainLabel.Text = CStr(CDec(MainLabel.Text) * b)
-            a = CDec(MainLabel.Text)
-            count = 0
+            MainLabel.Text = (sum * afe).ToString()
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            b = 0
+
+            isEqualed = True
+
+            debug.Text = count.ToString()
+            debuga.Text = sum.ToString()
+            debugb.Text = b.ToString()
+            isEqualedBtn.Text = isEqualed.ToString()
+            happ.Text = "Happening #5.3"
         End If
         If isDiv = True Then
-            MainLabel.Text = CStr(CDec(MainLabel.Text) / b)
-            a = CDec(MainLabel.Text)
-            count = 0
+            MainLabel.Text = (sum / afe).ToString()
+            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+            b = 0
+
+            isEqualed = True
+
+            debug.Text = count.ToString()
+            debuga.Text = sum.ToString()
+            debugb.Text = b.ToString()
+            isEqualedBtn.Text = isEqualed.ToString()
+            happ.Text = "Happening #5.4"
         End If
+
+        clearText = True
+        dotCount = 0
     End Sub
 
 #End Region
 
 
-    Private Sub MainLabel_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub MainLabel_TextChanged(sender As Object, e As EventArgs) Handles MainLabel.TextChanged
         If MainLabel.Text.Length = 12 Then
             btnActive = False
+        ElseIf MainLabel.Text.Length > 12 Then
+            MainLabel.Text = "Err_Too_Long"
         Else
             btnActive = True
         End If
