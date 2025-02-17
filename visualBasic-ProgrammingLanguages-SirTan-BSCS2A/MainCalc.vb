@@ -36,6 +36,7 @@ Public Class MainCalc
     Private b As Decimal = 0
 
     Private afe As Decimal = 0
+    Private fea As Decimal = 0
 
 #Region "BUTTON DESIGNS"
 
@@ -641,12 +642,49 @@ Public Class MainCalc
             b = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
             afe = b
 
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-
+            testVals()
             doAdd = True
-
         End If
+
+        If count = 1 Then
+            If isAdd = True Then
+                fea = (sum + b).ToString()
+
+                testVals()
+                happ.Text = "Happening #5.1"
+
+            ElseIf isSub = True Then
+                fea = (sum - b).ToString()
+
+                testVals()
+                happ.Text = "Happening #5.2"
+
+            ElseIf isMul = True Then
+                fea = (sum * b).ToString()
+
+                testVals()
+                happ.Text = "Happening #5.3"
+
+            ElseIf isDiv = True Then
+                Try
+                    fea = (sum / b).ToString()
+                Catch
+                    MainLabel.Text = "Cant_DivBy0"
+                End Try
+
+                testVals()
+                happ.Text = "Happening #5.4"
+            End If
+        End If
+
+        count = 0
+    End Function
+
+    Function testVals()
+        debug.Text = count.ToString()
+        debuga.Text = sum.ToString()
+        debugb.Text = b.ToString()
+        isEqualedBtn.Text = isEqualed.ToString()
     End Function
 
 #Region "INPUT BUTTONS"
@@ -698,6 +736,7 @@ Public Class MainCalc
         MainLabel.Text = "0"
         sum = 0
         b = 0
+        afe = 0
         count = 0
         dotCount = 0
 
@@ -721,143 +760,46 @@ Public Class MainCalc
 #Region "OPERATOR BUTTONS"
     Private count As Int128 = 0
     Private dotCount As Int128 = 0
-    Private Sub addBtn_Click(sender As Object, e As EventArgs) Handles addBtn.Click
-        If count = 0 Then
-            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-            happ.Text = "Happening #4.1.1"
-        End If
 
-        If count = 1 Then
-            If doAdd Then
-                MainLabel.Text = sum + b
-                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+    Function operation(addBool, subBool, mulBool, divBool) As Boolean
 
-                doAdd = False
-                happ.Text = "Happening #4.1.2"
-            End If
-        End If
 
+        'If count = 0 Then
+        '    sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+        '    MainLabel.Text = fea.ToString()
+        'End If
         b = 0
-
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
-
+        afe = 0
         clearText = True
 
-        isAdd = True
-        isSub = False
-        isMul = False
-        isDiv = False
+        isAdd = addBool
+        isSub = subBool
+        isMul = mulBool
+        isDiv = divBool
 
         dotCount = 0
         count = 1
+        testVals()
+    End Function
+
+    Private Sub addBtn_Click(sender As Object, e As EventArgs) Handles addBtn.Click
+        operation(True, False, False, False)
     End Sub
 
     Private Sub subtractBtn_Click(sender As Object, e As EventArgs) Handles subtractBtn.Click
-        If count = 0 Then
-            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-            happ.Text = "Happening #4.2.1"
-        End If
-
-        If count = 1 Then
-            If doAdd Then
-                MainLabel.Text = sum - b
-                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-
-                doAdd = False
-                happ.Text = "Happening #4.2.2"
-            End If
-        End If
-
-        b = 0
-
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
-
-        clearText = True
-
-        isAdd = False
-        isSub = True
-        isMul = False
-        isDiv = False
-
-        dotCount = 0
-        count = 1
+        operation(False, True, False, False)
     End Sub
 
     Private Sub multiplyBtn_Click(sender As Object, e As EventArgs) Handles multiplyBtn.Click
-        If count = 0 Then
-            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-            happ.Text = "Happening #4.3.1"
-        End If
-
-        If count = 1 Then
-            If doAdd Then
-                MainLabel.Text = sum * b
-                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-
-                doAdd = False
-                happ.Text = "Happening #4.3.2"
-            End If
-        End If
-
-        b = 0
-
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
-
-        clearText = True
-
-        isAdd = False
-        isSub = False
-        isMul = True
-        isDiv = False
-
-        dotCount = 0
-        count = 1
+        operation(False, False, True, False)
     End Sub
 
     Private Sub divideBtn_Click(sender As Object, e As EventArgs) Handles divideBtn.Click
-        If count = 0 Then
-            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-            happ.Text = "Happening #4.4.1"
-        End If
-
-        If count = 1 Then
-            If doAdd Then
-                MainLabel.Text = sum / b
-                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-
-                doAdd = False
-                happ.Text = "Happening #4.4.2"
-            End If
-        End If
-
-        b = 0
-
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
-
-        clearText = True
-
-        isAdd = False
-        isSub = False
-        isMul = False
-        isDiv = True
-
-        dotCount = 0
-        count = 1
+        operation(False, False, False, True)
     End Sub
 
     Private Sub equalButton_Click(sender As Object, e As EventArgs) Handles equalButton.Click
+        sum = fea
         If isAdd = True Then
             MainLabel.Text = (sum + afe).ToString()
             sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
@@ -865,49 +807,41 @@ Public Class MainCalc
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.1"
-        End If
-        If isSub = True Then
+
+        ElseIf isSub = True Then
             MainLabel.Text = (sum - afe).ToString()
             sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
             b = 0
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.2"
-        End If
-        If isMul = True Then
+
+        ElseIf isMul = True Then
             MainLabel.Text = (sum * afe).ToString()
             sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
             b = 0
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.3"
-        End If
-        If isDiv = True Then
-            MainLabel.Text = (sum / afe).ToString()
-            sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
-            b = 0
+
+        ElseIf isDiv = True Then
+            Try
+                MainLabel.Text = (sum / afe).ToString()
+                sum = Decimal.Parse(MainLabel.Text, System.Globalization.CultureInfo.InvariantCulture)
+                b = 0
+            Catch
+                MainLabel.Text = "Cant_DivBy0"
+            End Try
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.4"
         End If
 
@@ -916,7 +850,6 @@ Public Class MainCalc
     End Sub
 
 #End Region
-
 
     Private Sub MainLabel_TextChanged(sender As Object, e As EventArgs) Handles MainLabel.TextChanged
         If MainLabel.Text.Length = 12 Then
