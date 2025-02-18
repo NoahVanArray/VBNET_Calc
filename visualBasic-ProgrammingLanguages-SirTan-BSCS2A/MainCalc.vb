@@ -37,7 +37,25 @@ Public Class MainCalc
 
     Private afe As Decimal = 0
 
-#Region "BUTTON DESIGNS"
+#Region "DESIGNS"
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+        Dim g As Graphics = Panel1.CreateGraphics()
+
+        Dim panelRect As Rectangle = Panel1.ClientRectangle
+
+        Dim p1 As Point = New Point(panelRect.Left, panelRect.Top)  'top left
+        Dim p2 As Point = New Point(panelRect.Right + 4, panelRect.Top)  'Top Right
+        Dim p3 As Point = New Point(panelRect.Left, panelRect.Bottom + 4)  'Bottom Left
+        Dim p4 As Point = New Point(panelRect.Right + 4, panelRect.Bottom + 4)  'Bottom Right
+
+        Dim pen1 As Pen = New Pen(System.Drawing.Color.White)
+        Dim pen2 As Pen = New Pen(System.Drawing.Color.Black)
+
+        g.DrawLine(pen1, p1, p2)
+        g.DrawLine(pen1, p1, p3)
+        g.DrawLine(pen2, p2, p4)
+        g.DrawLine(pen2, p3, p4)
+    End Sub
 
     'BUTTON 0
     Private Sub Button0_Paint(sender As Object, e As PaintEventArgs) Handles Button0.Paint
@@ -601,28 +619,14 @@ Public Class MainCalc
         TextBox2.SelectionStart = TextBox2.Text.Length
     End Sub
 
+    Dim result As Decimal = 0
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-        Dim g As Graphics = Panel1.CreateGraphics()
-
-        Dim panelRect As Rectangle = Panel1.ClientRectangle
-
-        Dim p1 As Point = New Point(panelRect.Left, panelRect.Top)  'top left
-        Dim p2 As Point = New Point(panelRect.Right + 4, panelRect.Top)  'Top Right
-        Dim p3 As Point = New Point(panelRect.Left, panelRect.Bottom + 4)  'Bottom Left
-        Dim p4 As Point = New Point(panelRect.Right + 4, panelRect.Bottom + 4)  'Bottom Right
-
-        Dim pen1 As Pen = New Pen(System.Drawing.Color.White)
-        Dim pen2 As Pen = New Pen(System.Drawing.Color.Black)
-
-        g.DrawLine(pen1, p1, p2)
-        g.DrawLine(pen1, p1, p3)
-        g.DrawLine(pen2, p2, p4)
-        g.DrawLine(pen2, p3, p4)
+    Private Sub showResult()
+        MainLabel.Text = result.ToString()
     End Sub
 
 
-    Function typeBtn(value) As String
+    Function typeBtn(ByVal value As String)
         If MainLabel.Text.Length < 12 And btnActive = True Then
 
             If clearText = True Then
@@ -648,6 +652,20 @@ Public Class MainCalc
 
         End If
     End Function
+
+    Sub testVals()
+        isEqualedBtn.Text = isEqualed.ToString()
+        debug.Text = count.ToString()
+        debuga.Text = sum.ToString()
+        debugb.Text = b.ToString()
+    End Sub
+
+    Sub setOperation(ByVal a As Boolean, ByVal b As Boolean, ByVal c As Boolean, ByVal d As Boolean)
+        isAdd = a
+        isSub = b
+        isMul = c
+        isDiv = d
+    End Sub
 
 #Region "INPUT BUTTONS"
     Private Sub Button0_Click(sender As Object, e As EventArgs) Handles Button0.Click
@@ -739,17 +757,9 @@ Public Class MainCalc
 
         b = 0
 
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
-
         clearText = True
 
-        isAdd = True
-        isSub = False
-        isMul = False
-        isDiv = False
+        setOperation(True, False, False, False)
 
         dotCount = 0
         count = 1
@@ -773,17 +783,11 @@ Public Class MainCalc
 
         b = 0
 
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
+        testVals()
 
         clearText = True
 
-        isAdd = False
-        isSub = True
-        isMul = False
-        isDiv = False
+        setOperation(False, True, False, False)
 
         dotCount = 0
         count = 1
@@ -807,17 +811,11 @@ Public Class MainCalc
 
         b = 0
 
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
+        testVals()
 
         clearText = True
 
-        isAdd = False
-        isSub = False
-        isMul = True
-        isDiv = False
+        setOperation(False, False, True, False)
 
         dotCount = 0
         count = 1
@@ -841,17 +839,11 @@ Public Class MainCalc
 
         b = 0
 
-        isEqualedBtn.Text = isEqualed.ToString()
-        debug.Text = count.ToString()
-        debuga.Text = sum.ToString()
-        debugb.Text = b.ToString()
+        testVals()
 
         clearText = True
 
-        isAdd = False
-        isSub = False
-        isMul = False
-        isDiv = True
+        setOperation(False, False, False, True)
 
         dotCount = 0
         count = 1
@@ -865,10 +857,7 @@ Public Class MainCalc
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.1"
         End If
         If isSub = True Then
@@ -878,10 +867,7 @@ Public Class MainCalc
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.2"
         End If
         If isMul = True Then
@@ -891,10 +877,7 @@ Public Class MainCalc
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.3"
         End If
         If isDiv = True Then
@@ -904,10 +887,7 @@ Public Class MainCalc
 
             isEqualed = True
 
-            debug.Text = count.ToString()
-            debuga.Text = sum.ToString()
-            debugb.Text = b.ToString()
-            isEqualedBtn.Text = isEqualed.ToString()
+            testVals()
             happ.Text = "Happening #5.4"
         End If
 
@@ -916,7 +896,6 @@ Public Class MainCalc
     End Sub
 
 #End Region
-
 
     Private Sub MainLabel_TextChanged(sender As Object, e As EventArgs) Handles MainLabel.TextChanged
         If MainLabel.Text.Length = 12 Then

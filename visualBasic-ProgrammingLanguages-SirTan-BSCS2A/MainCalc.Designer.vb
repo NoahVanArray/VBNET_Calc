@@ -454,11 +454,11 @@ Partial Class MainCalc
         happ.FlatAppearance.BorderSize = 0
         happ.FlatAppearance.MouseDownBackColor = SystemColors.ControlLight
         happ.FlatStyle = FlatStyle.Flat
-        happ.Font = New Font("Trebuchet MS", 13F, FontStyle.Bold)
+        happ.Font = New Font("Trebuchet MS", 10F, FontStyle.Bold)
         happ.ForeColor = Color.FromArgb(CByte(217), CByte(218), CByte(220))
-        happ.Location = New Point(219, 408)
+        happ.Location = New Point(164, 408)
         happ.Name = "happ"
-        happ.Size = New Size(137, 33)
+        happ.Size = New Size(253, 33)
         happ.TabIndex = 24
         happ.Text = "happening #"
         happ.UseVisualStyleBackColor = True
