@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("visualBasic-ProgrammingLanguages-SirTan-BSCS2A"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa96ffc7769f06721dc7e1426972c9a9e9169941"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ab985f89b38e27ce27ff126c3773eedad1c40e5"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("visualBasic-ProgrammingLanguages-SirTan-BSCS2A"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("visualBasic-ProgrammingLanguages-SirTan-BSCS2A"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
